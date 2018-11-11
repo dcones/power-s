@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - Ceiling
   - Projectile
+  - Mob
   layers:
   - Default
   - TransparentFX

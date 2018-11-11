@@ -39,6 +39,14 @@ public class PlayerControl : MonoBehaviour
      }
 		}
 
+    void OnCollisionExit2D(Collision2D col){
+
+		 // Only vertical collisions resets the jump counter
+     if (col.gameObject.tag == "Floor") {
+       jump = 1;
+     }
+		}
+
     void OnGUI()
     {
        GUI.Label(new Rect(0, 0, 100, 100),  Mathf.Round(mana).ToString());
@@ -95,7 +103,7 @@ public class PlayerControl : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X) && mana > 1) {
 					GameObject clone;
-          clone = Instantiate(projectile, transform.position, transform.rotation);
+          clone = Instantiate(projectile, transform.position + new Vector3(50.0f*facingRight, 0.0f, 0.0f), transform.rotation);
           clone.AddComponent<ProjectileBehaviour>();
           clone.GetComponent<SpriteRenderer>().enabled = true;
           clone.GetComponent<Rigidbody2D>().velocity = new Vector2(500.0f*facingRight, 0.0f);
