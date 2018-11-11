@@ -5,82 +5,101 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     private Rigidbody2D rb;
+		private SpriteRenderer sr;
+    private GameObject projectile;
+    private float mana;
+		private int jump;
+		private float facingRight;
 
-    private float t = 0.0f;
-    private bool moving = false;
-		private int jump = 0;
+    public float getMana() {
+      return mana;
+    }
 
     void Awake()
     {
 				rb = gameObject.GetComponent<Rigidbody2D>();
+				sr = gameObject.GetComponent<SpriteRenderer>();
     }
 
     void Start()
     {
         gameObject.transform.Translate(0.0f, 0.0f, 0.0f);
+        mana = 5.0f;
+        jump = 0;
+        facingRight = 1.0f;
+        projectile = GameObject.FindWithTag("Projectile");
     }
 
+		// Collision Logic
 		void OnCollisionEnter2D(Collision2D col){
 
-			Debug.Log("Collision");
-		 if (transform.position[1] - col.transform.position[1] >= 0){
-			 jump = 0;
-		 }
+		 // Only vertical collisions resets the jump counter
+     if (col.gameObject.tag == "Floor") {
+       jump = 0;
+     }
 		}
+
+    void OnGUI()
+    {
+       GUI.Label(new Rect(0, 0, 100, 100),  Mathf.Round(mana).ToString());
+    }
 
     void Update()
     {
-        //Press the Up arrow key to move the RigidBody upwards
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-						float curr_y = rb.velocity.y;
-            moving = true;
-            t = 0.0f;
-						if (Input.GetKey(KeyCode.LeftShift)) {
-							rb.velocity = new Vector2(-6.0f, curr_y);
-						}
-						else {
-							rb.velocity = new Vector2(-2.0f, curr_y);
-						}
-        }
-
-        //Press the Down arrow key to move the RigidBody downwards
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-						float curr_y = rb.velocity.y;
-
-            moving = true;
-            t = 0.0f;
-						if (Input.GetKey(KeyCode.LeftShift)) {
-							rb.velocity = new Vector2(6.0f, curr_y);
-						}
-						else {
-							rb.velocity = new Vector2(2.0f, curr_y);
-						}
-        }
-
-				if (!(Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)))
+				// IDLE
+				if ((!(Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))) || (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.LeftArrow)))
 				{
 					 float curr_y = rb.velocity.y;
 					 rb.velocity = new Vector2(0.0f, curr_y);
-
 				}
 
+				// MOVE LEFT
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+						facingRight = -1.0f;
+						sr.flipX = true;
+						float curr_y = rb.velocity.y;
+						if (Input.GetKey(KeyCode.LeftShift)) {
+							rb.velocity = new Vector2(-300.0f, curr_y);
+						}
+						else {
+							rb.velocity = new Vector2(-200.0f, curr_y);
+						}
+        }
+
+				// MOVE RIGHT
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+						facingRight = 1.0f;
+						sr.flipX = false;
+						float curr_y = rb.velocity.y;
+						if (Input.GetKey(KeyCode.LeftShift)) {
+							rb.velocity = new Vector2(300.0f, curr_y);
+						}
+						else {
+							rb.velocity = new Vector2(200.0f, curr_y);
+						}
+        }
+
+				// JUMP
 				if (Input.GetKeyDown(KeyCode.UpArrow) && jump < 2) {
 					float curr_x = rb.velocity.x;
-					rb.velocity = new Vector2(curr_x, 5.0f);
+					rb.velocity = new Vector2(curr_x, 400.0f);
 					jump += 1;
 				}
 
-        if (moving)
-        {
-            // Record the time spent moving up or down.
-            // When this is 1sec then display info
-            t = t + Time.deltaTime;
-            if (t > 1.0f)
-            {
-                t = 0.0f;
-            }
+        if (mana < 5.0f) {
+          mana += 1.0f/(mana*20.0f + 15.0f);
+          if (mana > 5.0f) mana = 5.0f;
         }
+
+        if (Input.GetKeyDown(KeyCode.X) && mana > 1) {
+					GameObject clone;
+          clone = Instantiate(projectile, transform.position, transform.rotation);
+          clone.AddComponent<ProjectileBehaviour>();
+          clone.GetComponent<SpriteRenderer>().enabled = true;
+          clone.GetComponent<Rigidbody2D>().velocity = new Vector2(500.0f*facingRight, 0.0f);
+          mana -= 1.0f;
+				}
     }
 }
