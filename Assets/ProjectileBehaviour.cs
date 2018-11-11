@@ -9,6 +9,11 @@ public class ProjectileBehaviour : MonoBehaviour {
 		Destroy(gameObject, 2);
 	}
 
+	// Collision Logic
+	void OnCollisionEnter2D(Collision2D col){
+	 Destroy(gameObject);
+	}
+
 	// Update is called once per frame
 	void Update () {
 	}
