@@ -21,7 +21,9 @@ public class PlayerControl : MonoBehaviour
     }
 
 		void OnCollisionEnter2D(Collision2D col){
+
 		 Debug.Log("Jump Reset");
+		 Debug.Log(transform.position - col.transform.position);
 		 jump = 0;
 		 if (col.gameObject.tag == ""){
 			 jump = 0;
