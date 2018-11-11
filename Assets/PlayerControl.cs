@@ -22,10 +22,8 @@ public class PlayerControl : MonoBehaviour
 
 		void OnCollisionEnter2D(Collision2D col){
 
-		 Debug.Log("Jump Reset");
-		 Debug.Log(transform.position - col.transform.position);
-		 jump = 0;
-		 if (col.gameObject.tag == ""){
+			Debug.Log("Collision");
+		 if (transform.position[1] - col.transform.position[1] >= 0){
 			 jump = 0;
 		 }
 		}
@@ -81,7 +79,6 @@ public class PlayerControl : MonoBehaviour
             t = t + Time.deltaTime;
             if (t > 1.0f)
             {
-                Debug.Log("x = " + gameObject.transform.position.x + "  y = " + gameObject.transform.position.y);
                 t = 0.0f;
             }
         }
