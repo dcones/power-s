@@ -1212,6 +1212,7 @@ GameObject:
   - component: {fileID: 341983190}
   - component: {fileID: 341983189}
   - component: {fileID: 341983188}
+  - component: {fileID: 341983192}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1282,6 +1283,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &341983192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 341983187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c54966864384b31a41219f55dcead4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &371753691
 GameObject:
   m_ObjectHideFlags: 0
@@ -4146,7 +4158,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1369736243}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.013, y: -0.656, z: 0}
+  m_LocalPosition: {x: 0.65, y: 0.35, z: 0}
   m_LocalScale: {x: 1.6547825, y: 1.6547825, z: 1.6547825}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4200,7 +4212,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.33, y: 0.32}
+    oldSize: {x: 1.03125, y: 1}
     newSize: {x: 0.33, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
