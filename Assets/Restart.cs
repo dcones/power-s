@@ -35,5 +35,8 @@ public class Restart : MonoBehaviour {
 		if (collision.gameObject.tag == "EnemyProjectile") {
 			Hurt();
 		}
+		if (collision.gameObject.tag == "Abyss") {
+			Hurt();
+		}
 	}
 }

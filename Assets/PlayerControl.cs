@@ -59,10 +59,6 @@ public class PlayerControl : MonoBehaviour
        jump = 0;
      }
 
-     if (col.gameObject.tag == "Abyss") {
-       SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-     }
-
      if (col.gameObject.tag == "Thwomp") {
        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
      }
@@ -77,11 +73,6 @@ public class PlayerControl : MonoBehaviour
        isGrounded = false;
      }
 		}
-
-    void OnGUI()
-    {
-       GUI.Label(new Rect(0, 0, 100, 100),  Mathf.Round(mana).ToString());
-    }
 
     void Update()
     {

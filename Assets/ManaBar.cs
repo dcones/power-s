@@ -16,6 +16,6 @@ public class ManaBar : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		rectTransform.offsetMax = new Vector2(100.0f*player.getMana()/5.0f, rectTransform.offsetMax.y);
+		rectTransform.offsetMax = new Vector2(203f*player.getMana()/5.0f, rectTransform.offsetMax.y);
 	}
 }
