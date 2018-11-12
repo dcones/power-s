@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour {
-	
+
 	private GameObject uiscreen;
 	public GameObject player;
 	[SerializeField]
@@ -30,6 +30,9 @@ public class Restart : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision) {
 		Patrol enemy = collision.collider.GetComponent<Patrol>();
 		if(enemy != null) {
+			Hurt();
+		}
+		if (collision.gameObject.tag == "EnemyProjectile") {
 			Hurt();
 		}
 	}
