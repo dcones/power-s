@@ -54,6 +54,11 @@ public class PlayerControl : MonoBehaviour
        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
      }
 
+     if (col.gameObject.tag == "Thwomp") {
+       SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+     }
+
+
     }
     void OnCollisionExit2D(Collision2D col){
 

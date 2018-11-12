@@ -5,13 +5,13 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour {
 
 	public GameObject player;
-	public Rigidbody2D rigidbody;
+	public Rigidbody2D body;
 	public float offset;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindWithTag("Player");
-		rigidbody = gameObject.GetComponent<Rigidbody2D>() as Rigidbody2D;
+		body = gameObject.GetComponent<Rigidbody2D>() as Rigidbody2D;
 		this.transform.position = new Vector3(player.transform.position[0], this.transform.position[1], this.transform.position[2]);
 		offset = this.transform.position[0] - player.transform.position[0];
 
@@ -20,6 +20,6 @@ public class CameraFollow : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float x = player.transform.position[0] - this.transform.position[0] - offset;
-		rigidbody.velocity = new Vector2(4*x, 0.0f);
+		body.velocity = new Vector2(4*x, 0.0f);
 	}
 }
