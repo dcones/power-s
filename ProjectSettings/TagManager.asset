@@ -9,6 +9,7 @@ TagManager:
   - Ceiling
   - Projectile
   - Mob
+  - Abyss
   layers:
   - Default
   - TransparentFX
