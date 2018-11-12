@@ -813,7 +813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1369736243}
   body: {fileID: 341983193}
-  offset: 0
+  offset: {x: 0, y: 0, z: 0}
 --- !u!50 &341983193
 Rigidbody2D:
   serializedVersion: 4
@@ -833,7 +833,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 2
+  m_Constraints: 0
 --- !u!1 &425713518
 GameObject:
   m_ObjectHideFlags: 0
@@ -3879,7 +3879,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1950034911}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 333.5, y: 139, z: 0}
+  m_LocalPosition: {x: 508, y: 251.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 237577207}
