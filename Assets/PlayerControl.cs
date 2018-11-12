@@ -10,10 +10,13 @@ public class PlayerControl : MonoBehaviour
     private GameObject projectile;
     private GameObject projectileClone;
     private SpriteRenderer projectileCloneSprite;
+	private PolygonCollider2D poly;
     private float mana;
 		private int jump;
 		private float facingRight;
     private bool isGrounded;
+	[SerializeField]
+	public GameObject gameWinUI;
 
     public float getMana() {
       return mana;
@@ -23,6 +26,7 @@ public class PlayerControl : MonoBehaviour
     {
 				rb = gameObject.GetComponent<Rigidbody2D>();
 				sr = gameObject.GetComponent<SpriteRenderer>();
+		poly = gameObject.GetComponent<PolygonCollider2D> ();
     }
 
     void Start()
@@ -37,7 +41,12 @@ public class PlayerControl : MonoBehaviour
 
 		// Collision Logic
 		void OnCollisionEnter2D(Collision2D col){
-
+		if (col.gameObject.name == "EndPoint") {
+			Debug.Log ("YOU WIN");
+			gameWinUI.SetActive (true);
+			rb.gravityScale = -100;
+			poly.enabled = false;
+		}
 		 // Only vertical collisions resets the jump counter
      if (col.gameObject.tag == "Floor") {
        jump = 0;
