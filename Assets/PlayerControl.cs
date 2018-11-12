@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
     private Rigidbody2D rb;
 		private SpriteRenderer sr;
     private GameObject projectile;
+    private GameObject projectileClone;
+    private SpriteRenderer projectileCloneSprite;
     private float mana;
 		private int jump;
 		private float facingRight;
@@ -46,6 +49,11 @@ public class PlayerControl : MonoBehaviour
        rb.velocity = new Vector2(curr_x, 400.0f);
        jump = 0;
      }
+
+     if (col.gameObject.tag == "Abyss") {
+       SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+     }
+
     }
     void OnCollisionExit2D(Collision2D col){
 
@@ -120,13 +128,16 @@ public class PlayerControl : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.X) && mana > 1) {
-					GameObject clone;
-          clone = Instantiate(projectile, transform.position + new Vector3(50.0f*facingRight, 0.0f, 0.0f), transform.rotation);
-          clone.AddComponent<ProjectileBehaviour>();
-          clone.GetComponent<SpriteRenderer>().enabled = true;
-          clone.GetComponent<Rigidbody2D>().velocity = new Vector2(500.0f*facingRight, 0.0f);
+
+          projectileClone = Instantiate(projectile, transform.position + new Vector3(50.0f*facingRight, 0.0f, 0.0f), transform.rotation);
+          projectileClone.AddComponent<ProjectileBehaviour>();
+          projectileClone.GetComponent<SpriteRenderer>().enabled = true;
+          projectileClone.GetComponent<Rigidbody2D>().velocity = new Vector2(800.0f*facingRight, 0.0f);
+          projectileCloneSprite = projectileClone.GetComponent<SpriteRenderer>();
+          if (facingRight < 0.0f) { projectileCloneSprite.flipX = true;}
+
           mana -= 1.0f;
-          rb.velocity = new Vector2(rb.velocity[0] - 400.0f*facingRight , rb.velocity[1]);
+          rb.velocity = new Vector2(rb.velocity[0] - 800.0f*facingRight , rb.velocity[1]);
 				}
     }
 }
