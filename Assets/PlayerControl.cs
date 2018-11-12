@@ -123,7 +123,7 @@ public class PlayerControl : MonoBehaviour
 				// JUMP
 				if (Input.GetKeyDown(KeyCode.UpArrow) && jump < 2) {
 					float curr_x = rb.velocity.x;
-					rb.velocity = new Vector2(curr_x, 400.0f);
+					rb.velocity = new Vector2(curr_x, 800.0f);
 					jump += 1;
 				}
 
