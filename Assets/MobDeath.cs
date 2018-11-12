@@ -22,7 +22,10 @@ public class MobDeath : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (health <= 0) {
-			Destroy(gameObject);
+			Destroy(gameObject, 1);
 		}
+	}
+	public float getHealth () {
+		return health;
 	}
 }
