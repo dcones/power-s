@@ -17,7 +17,7 @@ public class EnemyFireShot : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (time >= 180) {
-			projectileClone = Instantiate(projectile, transform.position + new Vector3(-300.0f, -50.0f, 0.0f), transform.rotation);
+			projectileClone = Instantiate(projectile, transform.position + new Vector3(0.0f, 0.0f, 0.0f), transform.rotation);
 			projectileClone.AddComponent<ProjectileBehaviour>();
 			projectileClone.GetComponent<SpriteRenderer>().enabled = true;
 			projectileClone.GetComponent<Rigidbody2D>().velocity = new Vector2(-800.0f, 0.0f);
