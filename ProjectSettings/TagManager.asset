@@ -11,6 +11,7 @@ TagManager:
   - Mob
   - Abyss
   - UIScreen
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
