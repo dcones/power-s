@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: 56838da75eda7994a94dd1525c48b73c
+timeCreated: 1541991772
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: fireball_blue_0
+    21300002: fireball_blue_1
+    21300004: fireball_blue_2
+    21300006: fireball_blue_3
+    21300008: fireball_blue_4
+    21300010: fireball_blue_5
+    21300012: fireball_blue_6
+    21300014: fireball_blue_7
+    21300016: fireball_blue_8
+    21300018: fireball_blue_9
+    21300020: fireball_blue_10
+    21300022: fireball_blue_11
+    21300024: fireball_blue_12
+    21300026: fireball_blue_13
+    21300028: fireball_blue_14
+    21300030: fireball_blue_15
+    21300032: fireball_blue_16
+    21300034: fireball_blue_17
+    21300036: fireball_blue_18
+    21300038: fireball_blue_19
+    21300040: fireball_blue_20
+    21300042: fireball_blue_21
+    21300044: fireball_blue_22
+    21300046: fireball_blue_23
+    21300048: fireball_blue_24
+    21300050: fireball_blue_25
+    21300052: fireball_blue_26
+    21300054: fireball_blue_27
+    21300056: fireball_blue_28
+    21300058: fireball_blue_29
+    21300060: fireball_blue_30
+    21300062: fireball_blue_31
+    21300064: fireball_blue_32
+    21300066: fireball_blue_33
+    21300068: fireball_blue_34
+    21300070: fireball_blue_35
+    21300072: fireball_blue_36
+    21300074: fireball_blue_37
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1524
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fireball_blue_3
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 317
+        width: 869
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_blue_7
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 317
+        width: 872
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_blue_11
+      rect:
+        serializedVersion: 2
+        x: 2108
+        y: 317
+        width: 871
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_blue_13
+      rect:
+        serializedVersion: 2
+        x: 3165
+        y: 349
+        width: 838
+        height: 326
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

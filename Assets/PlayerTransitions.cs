@@ -12,5 +12,7 @@ public class PlayerTransitions : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+		animator.SetBool ("isJumpUp", rb.velocity.y > 0);
+		animator.SetBool ("isJumpDown", rb.velocity.y < 0);
 	}
 }
